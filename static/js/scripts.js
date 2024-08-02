@@ -38,20 +38,17 @@ function validateForm() {
     return false;
   }
 
-  // Email validation
   var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(email)) {
     alert("Invalid email address.");
     return false;
   }
 
-  // Message validation
   if (message.length < 10) {
     alert("Message must be at least 10 characters long.");
     return false;
   }
 
-  // Phone number validation
   var phoneregex =
     /^\+?(\d{1,4})?[-.\s]?(\(?\d{1,4}\)?)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
   if (!phoneregex.test(phone)) {
@@ -59,14 +56,10 @@ function validateForm() {
     return false;
   }
 
-  // If all validations pass, show the success modal
   var successModal = new bootstrap.Modal(
     document.getElementById("successModal")
   );
   successModal.show();
 
-  // Optionally, you can reset the form
-  //document.getElementById("contactForm").reset();
-
-  return false; // Prevent form submission
+  return true;
 }
